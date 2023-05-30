@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="chat"></div>
+    <div id="counter"></div>
+    <div id="grid"></div>
+    <script>
+      let gridWidth = 10;
+      let gridHeight = 10;
+      var cellCounter = 0;
+
+      for (i = 0; i < gridHeight; i++) {
+        for (j = 0; j < gridWidth; j++) {
+          let div = document.createElement("div");
+          div.style.width = "50px";
+          div.style.height = "50px";
+          div.style.backgroundColor = "rgba(0,0,0,.1)";
+          div.style.display = "inline-block";
+          div.style.margin = "5px";
+          div.id = cellCounter;
+          div.style.padding = "0px";
+          div.style.borderRadius = "20px";
+          document.getElementById("grid").appendChild(div);
+          cellCounter++;
+        }
+
+        let br = document.createElement("br");
+        document.getElementById("grid").appendChild(br);
+      }
+    </script>
+    <script src="client.js"></script>
+  </body>
+</html>
