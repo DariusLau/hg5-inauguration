@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <div id="chat"></div>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+  </head>
+  <body class="bg-black">
+    <div  id="chat"></div>
     <div id="counter"></div>
-    <button id="send">Press Me</button>
+    <div class="flex h-screen items-center  align-middle">
+      <button class="border-white text-white border px-20 py-10 text-5xl m-auto hover:bg-white hover:text-black font-mono" id="send">Open HackerGarage</button>
+    </div>
     <script src="client.js"></script>
   </body>
 </html>

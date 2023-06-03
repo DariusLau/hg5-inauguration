@@ -3,6 +3,7 @@ const button = document.querySelector("#send");
 
 let globalCounter = 0;
 
+
 connection.onopen = (event) => {
   console.log("WebSocket is open now.");
 };
@@ -22,14 +23,26 @@ connection.onmessage = (event) => {
   // console.log(event.data, globalCounter);
   globalCounter++;
   console.log("globalCounter", globalCounter);
+
   let cell = document.getElementById(cellCounter - globalCounter);
-  cell.style.backgroundColor = "red";
+
+  if (cellCounter - globalCounter <= 0) {
+    const jsConfetti = new JSConfetti()
+    // play()
+    jsConfetti.addConfetti({
+      emojis: ['🎆', '🛠️', '👩‍💻', '👨‍💻'],
+
+    })
+
+  }
+  cell.style.backgroundColor = "rgb(76, 235, 52)";
   console.log("cell", cell);
 };
 
 button.addEventListener("click", () => {
   // const name = document.querySelector("#name");
   // const message = document.querySelector("#message");
+  console.log('click')
   const data = 1;
 
   // Send composed message to the server
@@ -39,3 +52,10 @@ button.addEventListener("click", () => {
   // name.value = "";
   // message.value = "";
 });
+
+
+// didnt work (the user should interact with the document first)
+function play() {
+  var audio = document.getElementById("audio");
+  audio.play();
+}
