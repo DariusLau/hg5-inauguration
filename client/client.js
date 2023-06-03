@@ -29,10 +29,17 @@ connection.onmessage = (event) => {
   if (cellCounter - globalCounter <= 0) {
     const jsConfetti = new JSConfetti()
     // play()
+
     jsConfetti.addConfetti({
       emojis: ['🎆', '🛠️', '👩‍💻', '👨‍💻'],
-
     })
+
+    const loading = document.getElementById('loading')
+    // hide loading
+    loading.style.display = 'none'
+    // show button
+    const loaded = document.getElementById('loaded')
+    loaded.style.display = 'block'
 
   }
   cell.style.backgroundColor = "rgb(76, 235, 52)";
@@ -44,6 +51,15 @@ button.addEventListener("click", () => {
   // const message = document.querySelector("#message");
   console.log('click')
   const data = 1;
+  const jsConfetti = new JSConfetti()
+  // get random emoji
+  const emojis = ['🧰', '🛠️', '👩‍💻', '👨‍💻', '🧡', '💰']
+  const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)]
+
+  jsConfetti.addConfetti({
+    emojis: [randomEmoji],
+    confettiNumber: 10,
+  })
 
   // Send composed message to the server
   connection.send(data);
