@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <body>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  </head>
+  <body class="bg-black">
     <div id="chat"></div>
     <div id="counter"></div>
-    <div id="grid"></div>
+    <div class="flex items-center align-middle h-screen">
+
+      <div class="m-auto flex flex-wrap" id="grid"></div>
+    </div>
     <script>
-      let gridWidth = 10;
+      let gridWidth = 20;
       let gridHeight = 10;
       var cellCounter = 0;
 
       for (i = 0; i < gridHeight; i++) {
         for (j = 0; j < gridWidth; j++) {
-          let div = document.createElement("div");
+
+         let div = document.createElement("div"); 
           div.style.width = "50px";
           div.style.height = "50px";
-          div.style.backgroundColor = "rgba(0,0,0,.1)";
+          div.style.backgroundColor = "gray";
           div.style.display = "inline-block";
           div.style.margin = "5px";
           div.id = cellCounter;
